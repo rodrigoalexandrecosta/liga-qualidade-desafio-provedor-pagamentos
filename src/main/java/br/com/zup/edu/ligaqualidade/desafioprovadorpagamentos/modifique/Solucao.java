@@ -7,8 +7,19 @@ public class Solucao {
 
 	/**
 	 * 
-	 * @param infoTransacoes dados das transações
-	 * @param infoAdiantamentos informacao da transacao que pode ser recebida adiantada
+	 * @param infoTransacoes dados das transações. A String está formatada da seguinte maneira:		
+		<b>"valor,metodoPagamento,numeroCartao,nomeCartao,validade,cvv,idTransacao"</b>
+		<ol>
+		 <li> Valor é um decimal</li>
+	 	 <li> O método de pagamento é 'DEBITO' ou 'CREDITO' </li>
+	 	 <li> Validade é uma data no formato dd/MM/yyyy. </li>
+	 	</ol>
+	 	
+	 * @param infoAdiantamentos informacao da transacao que pode ser recebida adiantada. A String está formatada da seguinte maneira:		
+		<b>"idTransacao,taxa"</b>
+		<ol>
+	 	 <li> Taxa é um decimal </li>	 	 
+	 	</ol> 
 	 * 
 	 * @return Uma lista de array de string com as informações na seguinte ordem:
 	 * [status,valorOriginal,valorASerRecebidoDeFato,dataEsperadoRecebimento].
