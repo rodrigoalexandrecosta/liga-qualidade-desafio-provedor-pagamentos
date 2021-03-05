@@ -7,8 +7,8 @@ public class Solucao {
 
 	/**
 	 * 
-	 * @param transacoes dados das transações
-	 * @param recebimentosAdiantados informacao da transacao que pode ser recebida adiantada
+	 * @param infoTransacoes dados das transações
+	 * @param infoAdiantamentos informacao da transacao que pode ser recebida adiantada
 	 * 
 	 * @return Uma lista de array de string com as informações na seguinte ordem:
 	 * [status,valorOriginal,valorASerRecebidoDeFato,dataEsperadoRecebimento].
@@ -20,7 +20,7 @@ public class Solucao {
 	 * 
 	 * É esperado que o retorno respeite a ordem de recebimento
 	 */
-	public static List<String[]> executa(List<DadosTransacao> transacoes, List<DadosRecebimentoAdiantado> recebimentosAdiantados) {
+	public static List<String[]> executa(List<String> infoTransacoes, List<String> infoAdiantamentos) {
 		
 		return List.of(new String[][] { 
 					 {"pago","200","194","04/03/2021"} 					 

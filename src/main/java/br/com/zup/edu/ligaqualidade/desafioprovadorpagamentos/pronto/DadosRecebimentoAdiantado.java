@@ -12,4 +12,12 @@ public class DadosRecebimentoAdiantado {
 		this.taxa = taxa;
 	}
 
+	@Override
+	public String toString() {
+		return "DadosRecebimentoAdiantado [idTransacao=" + idTransacao
+				+ ", taxa=" + taxa + "]";
+	}
+	
+	
+
 }
