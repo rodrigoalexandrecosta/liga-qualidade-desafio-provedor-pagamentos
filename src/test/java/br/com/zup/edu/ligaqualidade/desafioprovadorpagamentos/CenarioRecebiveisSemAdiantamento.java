@@ -21,7 +21,7 @@ public class CenarioRecebiveisSemAdiantamento {
 	void teste(List<DadosTesteTransacao> infos,List<DadosEsperadosRetorno> retornosEsperados) throws Exception {
 		ArrayList<String> paramsTransacoes = new ArrayList<>();
 		for(DadosTesteTransacao info : infos) {			
-			String param = String.format("transacao,%s,%s,%s,%s,%s,%s,%s", 
+			String param = String.format("%s,%s,%s,%s,%s,%s,%s", 
 						info.valorTransacao,
 						info.formaPagamento,
 						"764387534", 
