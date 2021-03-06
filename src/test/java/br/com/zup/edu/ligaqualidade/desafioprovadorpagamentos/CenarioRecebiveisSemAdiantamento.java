@@ -1,6 +1,7 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class CenarioRecebiveisSemAdiantamento {
 						"457",
 						info.idTransacao
 						);
+			System.out.println(param);
 			paramsTransacoes.add(param);
 			
 		}
@@ -38,8 +40,8 @@ public class CenarioRecebiveisSemAdiantamento {
 		Assertions.assertEquals(retornosEsperados.size(), retornos.size());
 		for(int i=0;i < retornos.size(); i++) {
 			String status = retornos.get(i)[0];
-			String valorOriginal = new BigDecimal(retornos.get(i)[1]).setScale(0).toString();
-			String valorASerRecebido = new BigDecimal(retornos.get(i)[2]).setScale(0).toString();
+			String valorOriginal = new BigDecimal(retornos.get(i)[1]).setScale(0,RoundingMode.HALF_EVEN).toString();
+			String valorASerRecebido = new BigDecimal(retornos.get(i)[2]).setScale(0,RoundingMode.HALF_EVEN).toString();
 			String data = retornos.get(i)[3];
 			
 			Assertions.assertEquals(retornosEsperados.get(i).status, status);
